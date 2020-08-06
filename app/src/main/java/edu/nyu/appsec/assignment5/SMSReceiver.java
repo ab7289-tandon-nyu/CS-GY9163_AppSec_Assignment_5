@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
+import android.util.Log;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -14,9 +15,11 @@ import java.net.URL;
 
 public class SMSReceiver extends BroadcastReceiver {
     private static final String SPELL_CHECK_URL = "http://appsecclass.report:8080/";
+    //private static final String SPELL_CHECK_URL = "http://127.0.0.1:8080/";
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.d("SMSReciever", "onReceive SMS");
         Bundle bundle = intent.getExtras();
         String strMessage = "";
         String format = bundle.getString("format");
