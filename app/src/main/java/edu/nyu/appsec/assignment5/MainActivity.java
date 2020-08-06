@@ -12,6 +12,7 @@ import android.net.http.SslError;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -26,8 +27,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity implements LocationListener {
-    private static final String SPELL_CHECK_URL = "http://appsecclass.report:8080/";
-    private static final String KNOWN_HOST = "appsecclass.report";
+    //private static final String SPELL_CHECK_URL = "http://appsecclass.report:8080/";
+    //private static final String SPELL_CHECK_URL = "http://127.0.0.1:8080/";
+    //private static final String KNOWN_HOST = "appsecclass.report";
+    //private static final String KNOWN_HOST = "127.0.0.1";
+    private static final String SPELL_CHECK_URL = "http://192.168.99.100:31966/";
+    private static final String KNOWN_HOST = "192.168.99.100";
 
     private class MyWebViewClient extends WebViewClient {
         @Override
@@ -50,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     */
     @Override
     public void onLocationChanged(Location location) {
+        Log.d("MainActivity", "onLocationChanged");
         URL url = null;
         try {
             url = new URL(SPELL_CHECK_URL + "metrics"
