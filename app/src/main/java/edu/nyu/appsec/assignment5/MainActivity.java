@@ -11,13 +11,13 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity {
     //private static final String SPELL_CHECK_URL = "http://appsecclass.report:8080/";
-    //private static final String SPELL_CHECK_URL = "http://127.0.0.1:8080/";
+    private static final String SPELL_CHECK_URL = "http://10.0.2.2:8080/";
     //private static final String KNOWN_HOST = "appsecclass.report";
-    //private static final String KNOWN_HOST = "127.0.0.1";
+    private static final String KNOWN_HOST = "10.0.2.2";
     // Kubernetes cluster URL
     // for some reason this works but just using a docker container doesn't
-    private static final String SPELL_CHECK_URL = "http://192.168.99.100:31966/";
-    private static final String KNOWN_HOST = "192.168.99.100";
+    //private static final String SPELL_CHECK_URL = "http://192.168.99.100:32271/";
+    //private static final String KNOWN_HOST = "192.168.99.100";
 
     private class MyWebViewClient extends WebViewClient {
         @Override
